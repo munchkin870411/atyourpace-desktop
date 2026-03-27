@@ -1,0 +1,181 @@
+.weatherRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.weatherIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherTemp {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.weatherDesc {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+}
+
+/* ─── Activity suggestions ─── */
+.activities {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.activitiesTitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 0.4rem;
+}
+
+.activityList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.activityItem {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  padding: 0.15rem 0;
+}
+
+/* ─── Workout bonus ─── */
+.workout {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.65rem;
+  padding: 0.6rem 0.7rem;
+  background: var(--green-pale);
+  border-radius: var(--radius-sm);
+}
+
+.workoutEmoji {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.workoutInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.workoutTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+.workoutDesc {
+  font-size: 0.72rem;
+  color: var(--gray-600);
+}
+
+/* ─── Consent prompt ─── */
+.consent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.consentText {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+.consentButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.allowBtn {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  background: var(--green-mid);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.allowBtn:hover {
+  background: var(--green-dark);
+}
+
+.denyBtn {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  background: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  transition: background 0.15s;
+}
+
+.denyBtn:hover {
+  background: var(--gray-50);
+}
+
+/* ─── Denied / error state ─── */
+.denied {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deniedText {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+.resetBtn {
+  padding: 0.3rem 0.65rem;
+  background: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--green-mid);
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.resetBtn:hover {
+  background: var(--green-pale);
+  border-color: var(--green-light);
+}
+
+/* ─── Loading ─── */
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--gray-400);
+}
+
+.spinner {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}

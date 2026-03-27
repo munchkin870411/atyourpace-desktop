@@ -1,0 +1,114 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.25rem;
+  transition: background 0.15s;
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.item:hover {
+  background: var(--gray-50);
+}
+
+.done {
+  opacity: 0.5;
+}
+
+.done .title {
+  text-decoration: line-through;
+}
+
+/* Custom checkbox */
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--gray-200);
+  border-radius: 4px;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.checkbox:hover {
+  border-color: var(--green-light);
+}
+
+.title {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--gray-800);
+  cursor: pointer;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gray-800);
+  flex-shrink: 0;
+}
+
+.badge {
+  padding: 0;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--gray-600);
+  font-size: 1.15rem;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.deleteBtn:hover {
+  color: var(--red);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  color: var(--gray-500);
+  font-size: 1rem;
+  padding: 0.2rem;
+  transition: color 0.15s;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  color: var(--green-mid);
+}

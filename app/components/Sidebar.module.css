@@ -1,0 +1,292 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Mobile: profile card last */
+@media (max-width: 767px) {
+  .profileCard {
+    order: 99;
+  }
+  .summaryCard {
+    order: -1;
+  }
+}
+
+/* Tablet: sidebar spans full width, cards in a row */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    gap: 1.25rem;
+  }
+}
+
+/* ─── Card generic ─── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.cardBody {
+  padding: 1rem;
+}
+
+/* ─── Weather placeholder ─── */
+.weatherRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.weatherIcon {
+  font-size: 2rem;
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherTemp {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.weatherDesc {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+}
+
+/* ─── Summary panel ─── */
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.motivation {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.4rem 0;
+  color: var(--green-dark);
+}
+
+.progressTrack {
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-light), var(--green-mid));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.summaryLabel {
+  color: var(--gray-600);
+}
+
+.summaryValue {
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+/* ─── Profile toggle ─── */
+.profileToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.profileToggle:hover {
+  background: var(--gray-50);
+}
+
+.profileAvatar {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.profileImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.profileName {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileEmail {
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  font-size: 0.85rem;
+  color: var(--gray-400);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ─── Profile dropdown ─── */
+.profileDropdown {
+  border-top: 1px solid var(--gray-100);
+  animation: slideDown 0.15s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; }
+  to   { opacity: 1; max-height: 500px; }
+}
+
+.dropdownSection {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.dropdownSection:last-child {
+  border-bottom: none;
+}
+
+.dropdownLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── Avatar grid ─── */
+.avatarGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.3rem;
+}
+
+.avatarOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  background: none;
+  transition: all 0.15s;
+}
+
+.avatarOption:hover {
+  background: var(--green-pale);
+}
+
+.avatarActive {
+  border-color: var(--green-mid);
+  background: var(--green-pale);
+}
+
+/* ─── Theme dots ─── */
+.themeGrid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.themeDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.themeDot:hover {
+  transform: scale(1.15);
+}
+
+.themeDotActive {
+  border-color: var(--gray-800);
+  box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--gray-300);
+}
+
+/* ─── Dropdown footer ─── */
+.dropdownFooter {
+  padding: 0.65rem 1rem;
+}
+
+.signOutBtn {
+  width: 100%;
+  padding: 0.45rem;
+  background: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  transition: all 0.15s;
+}
+
+.signOutBtn:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}

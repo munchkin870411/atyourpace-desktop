@@ -38,4 +38,17 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Projektets todo-lista
+TODO.md
+
+# SQLite database (skydda lokal data)
+prisma/dev.db
+prisma/dev.db-journal
+prisma/*.sqlite
+
+# Ignorera genererade Prisma-filer (om de kan återskapas)
+app/generated/prisma/
 next-env.d.ts
+
+/app/generated/prisma
